@@ -2,36 +2,30 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getData } from "../actions/fetching-data";
 
-class Home extends Component {
-  constructor() {
-    super();
-    this.state = {
-      data: []
-    };
-  }
-
+class Detail extends Component {
   componentDidMount() {
     this.props.getData();
   }
-
   render() {
-    console.log("home", this.props);
+    if (!this.props.data) {
+      return <div>loading...</div>;
+    }
     return (
       <div>
-        <h1>
-          all charechter of startwars counted and they are :
-          {this.props.charechterCount}
-        </h1>
+        <h1>detail</h1>
+        {this.props.data.map(e => {
+          return <p>{e.name}</p>;
+        })}
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  charechterCount: state.dataReducer.data.count
+  data: state.dataReducer.data.results
 });
 
 export default connect(
   mapStateToProps,
   { getData }
-)(Home);
+)(Detail);

@@ -1,5 +1,5 @@
 const initalState = {
-  data: ""
+  data: []
 };
 
 export const dataReducer = (state = initalState, action) => {

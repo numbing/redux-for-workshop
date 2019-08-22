@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getData = () => dispatch => {
   dispatch(setDataLoading());
-  axios.get("https://jsonplaceholder.typicode.com/todos/1").then(res =>
+  axios.get("https://swapi.co/api/people").then(res =>
     dispatch({
       type: "GET_DATA",
       payload: res.data
