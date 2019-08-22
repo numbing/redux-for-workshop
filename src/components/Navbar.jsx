@@ -1,16 +1,48 @@
-import React, { Component } from "react";
+import React from "react";
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from "reactstrap";
 import { Link } from "react-router-dom";
 
-class Navbar extends Component {
+export default class MyNavbar extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
   render() {
     return (
-      <div className="NavBar">
-        <Link to="/details" className="navbar-brand">
-          details
-        </Link>
+      <div>
+        <Navbar color="dark" dark expand="md">
+          <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <Link to="/details">details</Link>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
       </div>
     );
   }
 }
-
-export default Navbar;

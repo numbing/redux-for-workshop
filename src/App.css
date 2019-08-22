@@ -2,3 +2,28 @@
   margin: 0;
   padding: 0;
 }
+body {
+  background-image: url("./images/starWar.jpg");
+  background-size: cover;
+}
+
+.Information {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.dataWrapper {
+  width: 300px;
+  list-style-type: none;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px 18px #888888;
+}
+li {
+  font-size: 20px;
+  color: red;
+}
+h1 {
+  color: lightgray;
+}
