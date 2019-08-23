@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
-import Detail from "./components/Detail";
+import Weather from "./components/Weather";
 import Navbar from "./components/Navbar";
 
 class App extends Component {
@@ -16,7 +16,7 @@ class App extends Component {
             <Navbar />
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/details" component={Detail} />
+              <Route exact path="/weather" component={Weather} />
             </Switch>
           </div>
         </Router>

@@ -12,9 +12,13 @@ body {
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+.Weather {
+  display: flex;
+  justify-content: center;
+}
 
 .dataWrapper {
-  width: 300px;
+  width: 350px;
   list-style-type: none;
   border: 1px solid;
   padding: 10px;
